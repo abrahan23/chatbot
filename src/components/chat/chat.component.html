@@ -1,0 +1,90 @@
+
+<div class="avatar" #avatar >
+    <div id="newtooltip" class="in-Right" >¡Hola! ¿Tienes dudas sobre el coronavirus?</div>
+    <div class="avatar-image">
+        <a (click)="OpenClose( avatar, frame)">
+             <img src="../../../assets/img/avataaars.svg" width="100"  alt="">
+         </a>
+    </div>
+</div>
+
+<div id="frame" #frame>
+    <div class="content">
+        <div class="contact-profile">
+            <div class="row">
+                <div class="col text-left">
+                    <a class="btn fa fa-minus text-white" (click)="OpenClose( frame, avatar)" #BtnClose></a>
+                    <img src="../../assets/img/avataaars.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+                    <span class="text-white">Bill</span>
+                </div>       
+                <div class="col text-right">
+                    <div ngbDropdown placement="bottom-right" class="d-inline-block">
+                        <a class="btn fa fa-bars text-white" id="dropdownBasic2" ngbDropdownToggle></a>
+                        <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                          <button ngbDropdownItem>Política de privacidad</button>
+                          <button ngbDropdownItem>Selecionar Idioma</button>
+                          <button ngbDropdownItem>Olvidar mis datos</button>
+                        </div>
+                      </div>
+                </div>
+            </div>
+
+        </div>
+        <div #Messages class="messages">
+            <ul #ulMessages>
+                <li class="replies">
+                    <img src="../../assets/img/avataaars.svg" alt="" />
+                    <p>When you're backed against the wall, break the god damn thing down.</p>
+                </li>
+                <li class="sent">
+                    <p>How the hell am I supposed to get a jury to believe you when I am not even sure that I do?!</p>
+                </li>
+                <li class="replies">
+                    <img src="../../assets/img/avataaars.svg" alt="" />
+                    <p>When you're backed against the wall, break the god damn thing down.</p>
+                </li>
+                <li class="replies">
+                    <img src="../../assets/img/avataaars.svg" alt="" />
+                    <p>Excuses don't win championships.</p>
+                </li>
+                <li class="sent">
+                    <p>Oh yeah, did Michael Jordan tell you that?</p>
+                </li>
+                <li class="replies">
+                    <img src="../../assets/img/avataaars.svg" alt="" />
+                    <p>No, I told him that.</p>
+                </li>
+                <li class="replies">
+                    <img src="../../assets/img/avataaars.svg" alt="" />
+                    <p>What are your choices when someone puts a gun to your head?</p>
+                </li>
+                <li class="sent">
+                    <p>What are you talking about? You do what they say or they shoot you.</p>
+                </li>
+                <li class="replies">
+                    <app-image-card></app-image-card>
+                </li>
+                <li class="replies">
+                    <img src="../../assets/img/avataaars.svg" alt="" />
+                    <p>Wrong. You take the gun, or you pull out a bigger one. Or, you call their bluff. Or, you do any one of a hundred and forty six other things.</p>
+                </li>
+            </ul>
+        </div>
+        <div class="help">
+            <app-help></app-help>
+        </div>
+        <div class="message-input">
+            <div class="">
+                <div class="wrap">
+                    <input type="text" (keydown.enter)="onKeydown($event)" #textMessage placeholder="Escribe tu pregunta" />
+                    <button class="submit" (click)="newMessage()"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                </div>
+            </div>
+        </div>
+        <div class="footer-chat">
+            <p class="text-center"><small>by 1millionbot</small></p>
+        </div>
+    </div>
+</div>
+
+
